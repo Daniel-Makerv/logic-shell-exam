@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icons/logo-green.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+    <title>Exam Daniel</title>
+</head>
+
+<body class="bg-white" id="body">
+    <!-- navbar goes here absolute top-0 left-0 w-full py-10 px-24 z-30 flex items-center z-10 transition duration-1000 -->
+    <!-- fixed inset-0 h-16 from-white via-white to-white backdrop-filter backdrop-blur-sm md:backdrop-blur-lg -->
+    <nav class="fixed w-full px-24 z-30 inset-0 h-16 from-white via-white to-white backdrop-filter backdrop-blur-sm md:backdrop-blur-lg"
+        id="navcolor">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-4 ">
+                    <!-- logo -->
+                    <div>
+                        <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+
+                            <img class="h-10 w-10 mr-1 text-blue-400" src="../icons/logo-green.ico" fill="none"
+                                viewBox="0 0 24 24">
+                            </img>
+                            <span class="font-black text-white">Logic</span>
+
+                        </a>
+                    </div>
+                    <!-- primary nav -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#carrusel" class="py-5 px-3 text-white hover:underline">Alojamientos</a>
+                        <a href="#automoviles" class="py-5 px-3 text-white hover:underline">Automóviles</a>
+                        <a href="#contacto" class="py-5 px-3 text-white hover:underline">Contacto</a>
+
+                    </div>
+                </div>
+                <!-- modo nocturno -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <button class="moon py-2 px-3 bg-indigo-700 rounded transition duration-300" id="modoNocturno"><svg
+                            xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg></button>
+                    <button class="sun py-2 px-3 bg-yellow-300 rounded transition duration-300" id="modoNocturno"><svg
+                            xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg></button>
+                </div>
+                <!-- mobile button goes here -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44"
+                            height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <line x1="4" y1="6" x2="20" y2="6" />
+                            <line x1="4" y1="12" x2="20" y2="12" />
+                            <line x1="4" y1="18" x2="20" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="mobile-menu hidden md:hidden text-center text-white backdrop-filter backdrop-blur-sm">
+            <a href="#carrusel" class="block py-2 px-4 text-sm text-white hover:underline">Alojamientos
+            </a>
+            <a href="#automoviles" class="block py-2 px-4 text-white text-sm hover:underline ">Automóviles</a>
+            <a href="#contacto" class="block py-2 px-4 text-sm text-white hover:underline">Contacto</a><br>
+            <!-- modo nocturno -->
+            <button class="moon2 py-2 px-3 bg-indigo-700 rounded transition duration-300" id="modoNocturno"><svg
+                    xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                </svg></button>
+            <button class="sun2 py-2 px-3 bg-yellow-300 rounded transition duration-300" id="modoNocturno"><svg
+                    xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg></button><br><br>
+        </div>
+    </nav>
+    <!-- section inicio-->
+    <div class="overlay absolute top-0 left-0 w-full h-full bg-overlay blend-screen"></div> -->
+
+    <section class="bg-no-repeat lg:h-screen bg-center bg-white lg:bg-fixed center mt-2" id="banner">
+        <video src="../videos/home.mp4" autoplay="true" muted="true" loop="true" class="absolute top-0 left-0
+              object-cover opacity-80"></video>
+        <div class="container mx-auto flex px-5 py-24 sm:py-40 items-center justify-center flex-col z-40 relative">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font mt-2 text-white font-bold text-3xl lg:text-6xl sm:text-3xl z-40" id="name">
+                    #QUIERO SER
+                    TURISTA<span>&#160;</span></h1>
+                <div class="flex justify-center mt-2">
+                    <div class="lg:w-24 w-14 h-1 bg-gradient-to-r from-white"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- //section description -->
+    <section class="snap-start bg-no-repeat lg:h-screen bg-center bg-cover lg:bg-fixed center mt-2 bg-white "
+        id="banner">
+        <div class="py-16 bg-gradient-to-br from-white to-white lg:mt-16">
+            <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+                <div class="mb-12 space-y-2 text-center">
+                    <img src="../images/logo-beige.png" alt=""
+                        class="h-20 w-15 object-cover content-center rounded-t-lg block w-max mx-auto px-3 py-1.5">
+                    <h2 class="title-sectiontwo text-2xl text-[#274644] md:text-4xl">El paraiso está en Playa del
+                        Carmen</h2>
+                    <p class="desc-sectiontwo lg:w-6/12 lg:mx-auto text-[#4C4C4C]">Quam hic dolore cumque voluptate
+                        rerum beatae et quae, tempore sunt, debitis dolorum officia aliquid explicabo? Excepturi,
+                        voluptate?rerum beatae et quae, tempore sunt, debitis dolorum officia aliquid explicabo?
+                        Excepturi,
+                        voluptate?</p>
+                </div>
+                <div class="grid gap-12 lg:grid-cols-2">
+                    <div
+                        class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+                        <img src="../images/foto-texto-intro.png" alt="art cover" loading="lazy" width="1000"
+                            height="667"
+                            class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
+                        <div class="sm:w-7/12 pl-0 p-5">
+                            <div class="space-y-2 justify-center text-center">
+                                <div class="space-y-4">
+                                    <h4 class="title-card text-2xl md:text-4xl text-[#274644]">Despertar en el caribe es
+                                        posible</h4>
+                                    <p class="desc-cardone text-[4C4C4C]">Morbi vehicula ac ligula laoreet gravida.
+                                        Quisque nec mi
+                                        eros. Aenean faucibus condimentum ipsum, sed placerat dolor varius et. Quisque
+                                        ut ante quis dui mattis efficitur.Nunc id
+                                        rutrum enim. Fusce nec nisl enim...</p>
+                                </div>
+                                <button class="bg-[#B99B6E] py-2 px-4 rounded-full text-white text-sm font-semibold">Ver
+                                    alojamientos</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <card class="relative h-[30rem] sm:h-96  rounded-lg">
+                        <!-- Background Image -->
+                        <img src="../images/woman-hand-keeping-hat-in-machine-window.jpg"
+                            class="object-cover w-full h-full rounded-lg" />
+                        <!-- Content -->
+                        <div
+                            class="absolute w-full h-full bottom-0 bg-gradient-to-r from-fuchsia-700/30 rounded-lg flex flex-col items-center justify-center text-center">
+                            <div class="space-y-4 mb-2">
+                                <h4 class="title-card text-2xl md:text-4xl text-[#B99B6E]">Renta un auto y viaja a tu
+                                    ritmo</h4>
+                                <p class="desc-cardtwo text-white">Morbi vehicula ac ligula laoreet gravida. Quisque nec
+                                    mi
+                                    eros. Aenean faucibus condimentum ipsum, sed placerat dolor varius et. Quisque
+                                    ut ante quis dui mattis efficitur.Nunc id
+                                    rutrum enim. Fusce nec nisl enim...</p>
+                            </div>
+                            <button class="bg-[#B99B6E] py-2 px-4 rounded-full text-white text-sm ">Ver
+                                Automóviles</button>
+
+                        </div>
+
+                    </card>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- //section carrusel -->
+    <section class="snap-start bg-no-repeat lg:h-screen bg-center bg-cover lg:bg-fixed center mt-2 bg-white"
+        id="carrusel">
+        <div class="py-16 bg-gradient-to-br from-white to-white">
+            <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+                <div class="mb-12 space-y-2 text-center">
+                    <h2 class="title-sectiontwo text-2xl text-[#274644] md:text-4xl">Explora alojamientos</h2>
+                </div>
+                <!-- carrusel-->
+                <article x-data="slider" class="relative w-full flex flex-shrink-0 overflow-hidden shadow-2xl">
+                    <div
+                        class="rounded-full bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-10">
+                        <span x-text="currentIndex"></span>/
+                        <span x-text="images.length"></span>
+                    </div>
+
+                    <template x-for="(image, index) in images">
+                        <figure class="h-96" x-show="currentIndex == index + 1"
+                            x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300"
+                            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                            <img :src="image" alt="Image"
+                                class="absolute inset-0 z-10 h-full w-full object-cover opacity-70" />
+                            <figcaption
+                                class="desc-target absolute inset-x-0 bottom-1 z-20 w-96 mx-auto p-4 font-light text-white text-sm text-center tracking-widest leading-snug bg-gray-800 bg-opacity-25">
+                                Casa Selvanova . Hasta 6 personas . con alberca
+                            </figcaption>
+                        </figure>
+                    </template>
+
+                    <button @click="back()"
+                        class="absolute left-14 top-1/2 -translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+                        <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:-translate-x-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <button @click="next()"
+                        class="absolute right-14 top-1/2 translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+                        <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:translate-x-0.5"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </button>
+                </article>
+                <div class="flex flex-wrap justify-center text-center mb-16 mt-8">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <!-- Header -->
+                        <button
+                            class="buttonSectiontree bg-[#274644] py-2 px-12 rounded-full text-white text-sm font-bold">Ver
+                            todos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section automobiles-->
+    <section class="snap-start bg-no-repeat lg:h-screen bg-center bg-[#B99B6E] mt-2" id="automoviles">
+        <div class="flex items-center justify-center py-14">
+            <div class="flex flex-col">
+                <!-- Notes -->
+                <div class="flex flex-col mt-2">
+                    <!-- Meet the Team -->
+                    <div class="">
+                        <!-- Section Header -->
+                        <div class="flex flex-wrap justify-center text-center mb-16">
+                            <div class="w-full lg:w-6/12 px-4">
+                                <!-- Header -->
+                                <h1 class="title-sectiontree text-[#274644] text-4xl font-bold mb-2">
+                                    Renta un automóvil
+                                </h1>
+                            </div>
+                        </div>
+
+                        <!-- Team Members -->
+                        <div class="flex flex-wrap justify-center text-center">
+                            <!-- Member #1 -->
+                            <div class="w-full md:w-6/12 lg:w-3/12 mb-3 px-6 sm:px-6 lg:px-4">
+                                <div class="flex flex-col">
+                                    <!-- Avatar -->
+                                    <a href="#" class="mx-auto">
+                                        <img class="rounded-3xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                            src="../images/carro-1.jpg">
+                                    </a>
+
+                                    <!-- Details -->
+                                    <div class="text-center mt-6">
+                                        <!-- Name -->
+                                        <button
+                                            class="bg-[#274644] py-2 px-4 rounded-full text-white text-sm font-bold">Para
+                                            4
+                                            personas</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Member #2 -->
+                            <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                                <div class="flex flex-col">
+                                    <!-- Avatar -->
+                                    <a href="#" class="mx-auto">
+                                        <img class="rounded-3xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                            src="../images/carro-2.jpg">
+                                    </a>
+
+                                    <!-- Details -->
+                                    <div class="text-center mt-6">
+                                        <!-- Name -->
+                                        <button
+                                            class="bg-[#274644] py-2 px-4 rounded-full text-white text-sm font-bold">Para
+                                            5
+                                            personas</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Member #3 -->
+                            <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                                <div class="flex flex-col">
+                                    <!-- Avatar -->
+                                    <a href="#" class="mx-auto">
+                                        <img class="rounded-3xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                            src="../images/urvan.jpg">
+                                    </a>
+
+                                    <!-- Details -->
+                                    <div class="text-center mt-6">
+                                        <!-- Name -->
+                                        <button
+                                            class="bg-[#274644] py-2 px-4 rounded-full text-white text-sm font-bold">Para
+                                            15
+                                            personas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap justify-center text-center mb-16 mt-8">
+                            <div class="w-full lg:w-6/12 px-4">
+                                <!-- Header -->
+                                <button
+                                    class="buttonSectiontree bg-white py-2 px-4 rounded-full text-[#274644] text-sm font-bold">Ver
+                                    todos nuestros Automóviles y camionetas</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section form contact-->
+    <section class="snap-start bg-no-repeat lg:h-screen bg-center bg-cover lg:bg-fixed center " id="contacto">
+        <div class="container mx-auto ">
+            <div class="flex justify-center px-6 my-12">
+                <!-- Row -->
+                <div class="w-full xl:w-4/4 lg:w-12/12 flex">
+                    <!-- Col -->
+                    <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
+                        style="background-image: url('../images/foto-formulario-2.jpg')"></div>
+                    <!-- Col -->
+                    <div class="w-full lg:w-1/2 bg-[#274644] p-5 rounded-lg lg:rounded-l-none">
+                        <div class="px-8 mb-4 text-center">
+                            <h3 class="title-sectionfourt pt-4 mb-2 text-4xl text-[#B99B6E]">Contacto</h3>
+                            <p class="desc-form mb-4 text-white">
+                                Escríbenos y reserva las vacaciones de tus sueños.<br> Contestaremos a la brevedad
+                                posible.
+                            </p>
+                        </div>
+                        <form class="px-8 pt-6 pb-8 mb-4 bg-[#274644] rounded">
+                            <div class="mb-4">
+                                <input
+                                    class="desc-form w-10/12 px-3 py-3 text-sm leading-tight text-black bg-[#CEDFDE] border rounded shadow appearance-none focus:outline-none focus:shadow-outline rounded-full"
+                                    id="name" type="text" placeholder="Nombre" />
+                                <input
+                                    class="desc-form w-10/12 px-3 py-3 text-sm leading-tight text-black bg-[#CEDFDE] border rounded shadow appearance-none focus:outline-none focus:shadow-outline mt-3 rounded-full"
+                                    id="name" type="text" placeholder="E-mail" />
+                                <input
+                                    class="desc-form w-10/12 px-3 py-3 text-sm leading-tight text-black bg-[#CEDFDE] border rounded shadow appearance-none focus:outline-none focus:shadow-outline mt-3 rounded-full"
+                                    id="name" type="text" placeholder="Teléfono" />
+
+                                <p class="desc-form mb-4 text-white mt-2">
+                                    Interesad@ en:
+                                </p>
+
+                                <div class="w-full mx-auto lg:items-center center">
+                                    <button type="button"
+                                        class="desc-form lg:w-3/12 border-2 border-[#B99B6E] text-white mr-3 text-white rounded-full px-10 py-2 m-2 transition duration-500 ease select-none hover:bg-[#B99B6E] focus:outline-none focus:shadow-outline">
+                                        Alojamiento
+                                    </button>
+                                    <button type="button"
+                                        class="desc-form lg:w-3/12 border-2 border-[#B99B6E] text-white mr-3 text-white rounded-full px-10 py-2 m-2 transition duration-500 ease select-none hover:bg-[#B99B6E] focus:outline-none focus:shadow-outline">
+                                        Automóvil
+                                    </button>
+                                    <button type="button"
+                                        class="desc-form lg:w-3/12 border-2 border-[#B99B6E] text-white mr-3 text-white rounded-full px-10 py-2 m-2 transition duration-500 ease select-none hover:bg-[#B99B6E] focus:outline-none focus:shadow-outline">
+                                        Ambos
+                                    </button>
+                                </div>
+                                <div class="flex p-2 w-full space-x-0 mt-2">
+                                    <button
+                                        class="min-w-auto w-32 h-10 bg-[#CEDFDE] p-2 rounded-l-full hover:bg-[#B99B6E]  text-black font-semibold border-2 transition-all duration-200 ease-in-out">
+                                        <i class="mdi mdi-calendar 
+                                        transition-color duration-200"></i> Entrada
+                                    </button>
+                                    <button
+                                        class="min-w-auto w-32 h-10 bg-[#CEDFDE] p-2 rounded-r-full hover:bg-[#B99B6E] text-black font-semibold border-2 transition-all duration-200 ease-in-out">
+                                        <i class="mdi mdi-calendar 
+                                        transition-color duration-200"></i> Salida
+                                    </button>
+                                </div>
+                                <div class="flex p-2 w-full justify-center  space-x-0 mt-2">
+                                    <button type="button"
+                                        class="border-2 border-[#B99B6E] text-white mr-3 text-white rounded-full px-10 py-2 m-2 transition duration-500 ease select-none hover:bg-red-600 focus:outline-none focus:shadow-outline">
+                                        Enviar
+                                    </button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section footer -->
+    <footer class="relative bg-[#274644] pt-8 pb-6 bg-white dark:bg-[#274644]">
+        <!-- This is an example component -->
+        <div class="max-w-8xl mx-auto justify-center center">
+            <footer class="p-4 bg-[#274644] sm:p-6 dark:bg-[#274644]">
+                <div class="md:flex md:justify-between">
+                    <div class="mb-3 md:mb-0">
+                        <a href="#" target="_blank" class="flex items-center">
+                            <img src="../images/logo-beige.png" class="mr-4 h-10" alt="FlowBite Logo">
+                            <span
+                                class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#B99B6E]">#QUIERO
+                                SER TURISTA</span>
+                        </a>
+                        <p class="desc-cardone text-white">Morbi vehicula ac ligula laoreet gravida.
+                            Quisque nec mi
+                            eros. Aenean faucibus condimentum <br>ipsum, sed placerat dolor varius et. Quisque
+                            ut ante quis dui mattis efficitur.</p>
+                        <br>
+                        <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                            <a href="#" class="text-white hover:text-gray-900 dark:hover:text-white">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-white hover:text-gray-900 dark:hover:text-white">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 sm:gap-12 sm:grid-cols-4">
+                        <div>
+                            <ul>
+                                <li class="mb-4">
+                                    <a href="#" target="_blank"
+                                        class="desc-form text-white hover:underline dark:text-white">HOME</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" rel="nofollow"
+                                        class="desc-form text-white hover:underline dark:text-white">NOSOTROS</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" rel="nofollow"
+                                        class="desc-form text-white hover:underline dark:text-white">ALOJAMIENTOS</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" rel="nofollow"
+                                        class="desc-form text-white hover:underline dark:text-white">RENTA DE AUTOS</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" rel="nofollow"
+                                        class="desc-form text-white hover:underline dark:text-white">CONTACTO</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-white-200 sm:mx-auto dark:border-white-700 lg:my-8">
+                <div class="sm:flex sm:items-center sm:justify-center lg:justify-center justify-center center">
+                    <span
+                        class="self-center text-sm text-white sm:text-center text-[#B99B6E] dark:text-[#B99B6E]">#QUIERO
+                        SER TURISTA</span>
+                    <span class="self-center text-sm text-white sm:text-center dark:text-white"> © 2022 <a href="#"
+                            target="_blank" class="hover:underline">Todos los derechos
+                            reservados</a>
+                    </span>
+
+                </div>
+            </footer>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/function.js"></script>
+
+</html>

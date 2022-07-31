@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "NuevaStd";
+  src: url("../fonts/NuevaStd-Bold.otf");
+}
+
+@font-face {
+  font-family: "CeraProBold";
+  src: url("../fonts/Cera-Pro-Bold.otf");
+}
+
+@font-face {
+  font-family: "CeraProMedium";
+  src: url("../fonts/Cera-Pro-Medium.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+    scroll-behavior: smooth;
+}
+
+
+#navcolor {
+  font-family: NuevaStd;
+  background-color: #00000067;
+  backdrop-filter: blur(20px);
+}
+
+#name {
+  font-family: NuevaStd;
+}
+
+#description {
+  font-family: NuevaStd;
+}
+.title-sectiontwo {
+  font-family: NuevaStd;
+}
+.desc-sectiontwo {
+  font-family: CeraProMedium;
+}
+.title-card {
+  font-family: NuevaStd;
+}
+.title-cardtwo {
+  font-family: NuevaStd;
+}
+
+.desc-cardone {
+  font-family: CeraProMedium;
+}
+.desc-cardtwo {
+  font-family: CeraProMedium;
+}
+.title-sectiontree {
+  font-family: NuevaStd;
+}
+.buttonSectiontree {
+  font-family: CeraProBold;
+}
+.title-sectionfourt {
+  font-family: NuevaStd;
+}
+.desc-form {
+  font-family: CeraProMedium;
+}
+.desc-target {
+  font-family: CeraProBold;
+}
+.self-center{
+    font-family: NuevaStd;
+}
+
+.mobile-menu {
+  background-color: #00000049;
+}
+
+.accordion-content {
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.one:hover span {
+  width: 50%;
+}
+.two:hover span {
+  width: 50%;
+}
+
+.tree:hover span {
+  width: 50%;
+}
